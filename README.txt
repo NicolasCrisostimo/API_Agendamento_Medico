@@ -16,8 +16,8 @@ Instalação:
 2. Instalar as dependências:
    npm install
 
-3. Criar um arquivo .env na raiz:
-   MONGO_URI=<string_de_conexao_mongodb>
+3. Criar um arquivo .env na raiz. Aqui está o acesso que utilizei como são apenas testes não vejo problema. O mongo está com acesso a todos os IPs:
+   MONGO_URI=mongodb+srv://Nicolas:TesteTecnico!@clusterteste.pjxiuam.mongodb.net/?retryWrites=true&w=majority&appName=ClusterTeste
    PORT=3000
 
 4. Rodar o servidor:
