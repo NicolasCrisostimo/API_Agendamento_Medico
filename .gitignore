@@ -1,0 +1,14 @@
+# Pasta de dependências do Node
+node_modules/
+
+# Arquivo de variáveis de ambiente
+.env
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Sistema operacional (opcional)
+.DS_Store
+Thumbs.db

@@ -1,0 +1,114 @@
+{
+  "info": {
+    "name": "API Agendamento Médico",
+    "_postman_id": "12345678-abcd-efgh-ijkl-1234567890ab",
+    "description": "Coleção para testar endpoints de Pacientes, Médicos e Consultas",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Pacientes",
+      "item": [
+        {
+          "name": "Criar Paciente",
+          "request": {
+            "method": "POST",
+            "header": [{"key":"Content-Type","value":"application/json"}],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"João Silva\",\n  \"email\": \"joao@email.com\",\n  \"cpf\": \"12345678901\"\n}"
+            },
+            "url": {"raw": "http://localhost:3000/pacientes","protocol":"http","host":["localhost"],"port":"3000","path":["pacientes"]}
+          }
+        },
+        {
+          "name": "Listar Pacientes",
+          "request": {
+            "method": "GET",
+            "url": {"raw": "http://localhost:3000/pacientes","protocol":"http","host":["localhost"],"port":"3000","path":["pacientes"]}
+          }
+        }
+      ]
+    },
+    {
+      "name": "Médicos",
+      "item": [
+        {
+          "name": "Criar Médico",
+          "request": {
+            "method": "POST",
+            "header": [{"key":"Content-Type","value":"application/json"}],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Dra. Ana\",\n  \"especialidade\": \"Cardiologia\",\n  \"crm\": \"12345\"\n}"
+            },
+            "url": {"raw": "http://localhost:3000/medicos","protocol":"http","host":["localhost"],"port":"3000","path":["medicos"]}
+          }
+        },
+        {
+          "name": "Listar Médicos",
+          "request": {
+            "method": "GET",
+            "url": {"raw": "http://localhost:3000/medicos","protocol":"http","host":["localhost"],"port":"3000","path":["medicos"]}
+          }
+        }
+      ]
+    },
+    {
+      "name": "Consultas",
+      "item": [
+        {
+          "name": "Criar Consulta",
+          "request": {
+            "method": "POST",
+            "header": [{"key":"Content-Type","value":"application/json"}],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"dataHora\": \"2025-08-30T10:00:00\",\n  \"paciente\": \"ID_DO_PACIENTE\",\n  \"medico\": \"ID_DO_MEDICO\"\n}"
+            },
+            "url": {"raw": "http://localhost:3000/consultas","protocol":"http","host":["localhost"],"port":"3000","path":["consultas"]}
+          }
+        },
+        {
+          "name": "Listar Consultas",
+          "request": {
+            "method": "GET",
+            "url": {"raw": "http://localhost:3000/consultas","protocol":"http","host":["localhost"],"port":"3000","path":["consultas"]}
+          }
+        },
+        {
+          "name": "Listar Consultas por Médico",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:3000/consultas?medico=ID_DO_MEDICO",
+              "protocol":"http","host":["localhost"],"port":"3000","path":["consultas"],
+              "query":[{"key":"medico","value":"ID_DO_MEDICO"}]
+            }
+          }
+        },
+        {
+          "name": "Listar Consultas por Data",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:3000/consultas?data=2025-08-30",
+              "protocol":"http","host":["localhost"],"port":"3000","path":["consultas"],
+              "query":[{"key":"data","value":"2025-08-30"}]
+            }
+          }
+        },
+        {
+          "name": "Cancelar Consulta",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "http://localhost:3000/consultas/ID_DA_CONSULTA",
+              "protocol":"http","host":["localhost"],"port":"3000","path":["consultas","ID_DA_CONSULTA"]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
